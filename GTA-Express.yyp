@@ -74,7 +74,7 @@
             "Key": "2bd990b8-73fa-4f7c-a53a-f73b76ee6bd8",
             "Value": {
                 "id": "c994b1ed-76ba-4d69-b867-7f80008b256e",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\rm_0\\rm_0.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "8c03637c-6766-4c61-b3ca-966f9c5464d2",
+            "Value": {
+                "id": "44becdb1-2c34-4abe-8c93-e447439962f6",
+                "resourcePath": "objects\\obj_player\\obj_player.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8f819974-bb18-4c2b-8095-ecb085bb80d7",
             "Value": {
                 "id": "6825802b-cc6f-45d9-beef-289b6bdd2d28",
@@ -156,6 +164,14 @@
                 "id": "d2974f91-00b1-48b3-ab45-c699bc25fded",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "ad0660fd-ab9e-4da4-a8aa-e389022baa73",
+            "Value": {
+                "id": "f1e8e48d-1f4b-4d9d-896d-33581b970a9f",
+                "resourcePath": "sprites\\spr_player\\spr_player.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

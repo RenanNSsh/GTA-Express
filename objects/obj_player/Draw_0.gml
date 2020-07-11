@@ -4,11 +4,13 @@ var animation_frames = 9;
 var sprite_size = 64;
 var animation_speed = 12;
 
-if      (next_move_x < 0)	current_y_frame = 9;
-else if (next_move_x > 0)	current_y_frame = 11;
-else if (next_move_y < 0)   current_y_frame = 8;
-else if (next_move_y > 0)   current_y_frame = 10;
-else						current_x_frame = 0;
+switch(facing){
+	case dir.left:   current_y_frame = 9; break;
+	case dir.right:  current_y_frame = 11; break;
+	case dir.up:     current_y_frame = 8; break;
+	case dir.down:   current_y_frame = 10; break;
+	case -1:		 current_x_frame = 0; break;
+}
 
 var x_draw = x-x_offset;
 var y_draw = y-y_offset;

@@ -45,6 +45,21 @@ if(input_up){
 	next_move_y += -player_speed;
 }
 
+//GET DIRECTION PLAYER IS FACING
+if(next_move_x != 0){
+	switch(sign(next_move_x)){
+		case  1: facing = dir.right; break;
+		case -1: facing = dir.left;  break;
+	}
+}else if(next_move_y != 0){
+	switch(sign(next_move_y)){
+		case  1: facing = dir.down; break;
+		case -1: facing = dir.up;  break;
+	}
+}else{
+	facing = -1;
+}
+
 //---------------COLLISION CHECKS
 //HORIZONTAL
 var horizontal_colission = place_meeting(x+next_move_x, y, obj_collision);
@@ -73,6 +88,21 @@ if(vertical_colission){
 		}
 	}
 	next_move_y = 0
+}
+
+//OBJECTS
+var transition_instance = instance_place(x,y,obj_transition);
+if(transition_instance != noone && facing == transition_instance.player_facing_before){
+	with(game){
+		if(!do_transition){
+			spawn_room = transition_instance.target_room;
+			spawn_x = transition_instance.target_x;
+			spawn_y = transition_instance.target_y;
+			spawn_player_facing = transition_instance.player_facing_after;
+			do_transition = true;
+		}
+	}
+	
 }
 
 //---------------APPLY MOVEMENT

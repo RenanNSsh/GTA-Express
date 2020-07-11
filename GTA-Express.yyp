@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "3fa757d3-3517-4610-85ac-4500d23c3885",
+            "Value": {
+                "id": "aa95c314-9862-45fb-8c81-b0f4d209bcb1",
+                "resourcePath": "tilesets\\tile_terrain\\tile_terrain.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "46cc05da-b4b8-4ee7-b920-482fcae7733f",
             "Value": {
                 "id": "bcf75811-fe96-4650-88d6-6fa9d675e89c",
@@ -247,11 +255,27 @@
             }
         },
         {
+            "Key": "6be14afa-fbef-489d-aa03-72aac3e9bc42",
+            "Value": {
+                "id": "23728b0e-4dd0-47ee-8895-70d49b0ae170",
+                "resourcePath": "sprites\\spr_tile_terrain\\spr_tile_terrain.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "75abbd22-4e22-43e6-aef4-0dda00952a1d",
             "Value": {
                 "id": "5b5e21d9-6e33-4d0f-8771-fb31ee8acd7b",
                 "resourcePath": "sprites\\spr_feet_female_boots_black\\spr_feet_female_boots_black.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "77677b30-d2d2-4307-865f-e9595378827b",
+            "Value": {
+                "id": "d396efa1-c0d8-45b0-8688-c6fe4c1c12fa",
+                "resourcePath": "tilesets\\tile_cottage\\tile_cottage.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -439,6 +463,14 @@
             }
         },
         {
+            "Key": "cb891f8a-8b6f-43df-8a00-a749595af666",
+            "Value": {
+                "id": "bde6574e-5536-47ea-9387-d8ddea1d977c",
+                "resourcePath": "views\\cb891f8a-8b6f-43df-8a00-a749595af666.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "624e8ff8-effc-4f7b-9055-2191b06f1302",
@@ -500,6 +532,14 @@
                 "id": "b0895d2c-bd2a-4f02-b3c2-786a97d444cc",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f76b7789-d575-4705-8756-637827806248",
+            "Value": {
+                "id": "0277eeb1-ff9b-4b0f-8d9c-202377508701",
+                "resourcePath": "sprites\\spr_tile_cottage\\spr_tile_cottage.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

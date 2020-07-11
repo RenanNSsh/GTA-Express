@@ -13,7 +13,6 @@ else						current_x_frame = 0;
 var x_draw = x-x_offset;
 var y_draw = y-y_offset;
 
-
 //INCREMENT FRAME FOR ANIMATION
 if(current_x_frame + (animation_speed/60) < animation_frames -1){
 	current_x_frame += animation_speed / 60;
@@ -51,7 +50,7 @@ draw_sprite_part(
 
 //DRAW CHARACTER SHIRT
 draw_sprite_part(
-	spr_shirt,0, 
+	spr_torso,0, 
 	floor(current_x_frame) * sprite_size, 
 	current_y_frame * sprite_size,
 	sprite_size,sprite_size,
@@ -66,4 +65,7 @@ draw_sprite_part(
 	sprite_size,sprite_size,
 	x_draw,y_draw
 );
+
+//DRAW CHARACTER SHADOW
+draw_sprite(spr_shadow,0,x, y);
 

@@ -66,7 +66,7 @@
             "Key": "0b55b595-54e1-408a-a4f4-c3d48ca9ad0e",
             "Value": {
                 "id": "1681da37-ad41-45c0-92dc-310e9d69f4d7",
-                "resourcePath": "rooms\\rm_farm_field\\rm_farm_field.yy",
+                "resourcePath": "rooms\\rm_farm\\rm_farm.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -138,7 +138,7 @@
             "Key": "2bd990b8-73fa-4f7c-a53a-f73b76ee6bd8",
             "Value": {
                 "id": "c994b1ed-76ba-4d69-b867-7f80008b256e",
-                "resourcePath": "rooms\\rm_farm\\rm_farm.yy",
+                "resourcePath": "rooms\\rm_farm_field\\rm_farm_field.yy",
                 "resourceType": "GMRoom"
             }
         },

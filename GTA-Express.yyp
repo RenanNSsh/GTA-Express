@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "0b55b595-54e1-408a-a4f4-c3d48ca9ad0e",
+            "Value": {
+                "id": "1681da37-ad41-45c0-92dc-310e9d69f4d7",
+                "resourcePath": "rooms\\rm_farm_field\\rm_farm_field.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "0e5597a8-e831-46cc-8206-6b69290526af",
             "Value": {
                 "id": "9ea5de80-e47b-423f-9ef0-4707fdff609a",
@@ -76,6 +84,14 @@
                 "id": "029ab080-ac43-4ac5-be3e-7a8d728e0a3a",
                 "resourcePath": "views\\1b45ba80-756d-4017-a445-a08600ceaaad.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1e74c674-e906-4d68-bfe3-1da836e73b9f",
+            "Value": {
+                "id": "a7de4b97-9835-4140-821d-0d5973323e22",
+                "resourcePath": "rooms\\rm_farm_shop\\rm_farm_shop.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -122,7 +138,7 @@
             "Key": "2bd990b8-73fa-4f7c-a53a-f73b76ee6bd8",
             "Value": {
                 "id": "c994b1ed-76ba-4d69-b867-7f80008b256e",
-                "resourcePath": "rooms\\rm_1\\rm_1.yy",
+                "resourcePath": "rooms\\rm_farm\\rm_farm.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -148,6 +164,14 @@
                 "id": "af770298-2854-4a28-9ff5-5ad2cfd508cf",
                 "resourcePath": "sprites\\spr_hair_male_bedhead_pink\\spr_hair_male_bedhead_pink.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "37e2fb8c-9961-43fe-8b92-dd82cd9890be",
+            "Value": {
+                "id": "454d0c9f-9b57-41fc-9ed2-eefc486becd8",
+                "resourcePath": "tilesets\\tile_interior\\tile_interior.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -203,6 +227,14 @@
             "Value": {
                 "id": "021a7a20-e1eb-473d-8b4b-9d34d126755e",
                 "resourcePath": "sprites\\spr_base_female_4\\spr_base_female_4.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "517a20df-d2e9-4a23-b247-33cf53b56100",
+            "Value": {
+                "id": "0227e24f-21c5-4815-8762-37f4ef837836",
+                "resourcePath": "sprites\\spr_tile_interior\\spr_tile_interior.yy",
                 "resourceType": "GMSprite"
             }
         },

@@ -1,5 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(room != rm_farm_field){ 
+	planting = false;
+	exit;
+}
+
+
 #region Planting
 var input_planting_mode = keyboard_check_pressed(ord("P"));
 var input_plant_crop    = mouse_check_button_pressed(mb_left);

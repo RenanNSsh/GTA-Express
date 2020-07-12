@@ -28,14 +28,20 @@ name_text_y = namebox_y + (namebox_height / 2);
 
 text_max_width = textbox_width - (2*x_buffer_text);
 text_height = string_height("M");
+pause_text = false; 
 
-text[0] = "estou ficando maluco estou ficando maluco estou ficando maluco estou ficando maluco estou ficando maluco estou ficando maluco"   
+text[0] = "estou ficando, maluco estou ficando, maluco estou ficando! maluco estou ficando maluco estou ficando maluco estou ficando maluco"   
 text[1] = "vou me tornar o deus do novo gamemaker!"
+voice = snd_voice1;
 page = 0;
 name = "Renan"
+counter_text = 0;
+
 
 interact_key = vk_space;
 
 text_color = c_black;
 name_text_color = c_black;
 font = fnt_text_12;
+
+event_perform(ev_other, ev_user1);

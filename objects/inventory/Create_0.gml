@@ -97,6 +97,55 @@ enum items{
  height			= 17
 }
 
+#region Create Items Info Grid
+description_position_x = user_name_x;
+description_position_y = inventory_UI_y + (156 * scale);
+
+ds_items_info = ds_grid_create(2,items.height);
+
+//---Item Names
+var name_index = 0;
+var description_index = 1;
+ds_items_info[# name_index, items.none]		 = "Nothing";
+ds_items_info[# name_index, items.tomato]    = "Tomato";
+ds_items_info[# name_index, items.potato]	 = "Potato";
+ds_items_info[# name_index, items.carrot]	 = "Carrot";
+ds_items_info[# name_index, items.artichoke] = "Artichoke";
+ds_items_info[# name_index, items.chilli]	 = "Chilli";
+ds_items_info[# name_index, items.gourd]	 = "Gourd";
+ds_items_info[# name_index, items.corn]		 = "Corn";
+ds_items_info[# name_index, items.wood]		 = "Wood";
+ds_items_info[# name_index, items.stone]	 = "Stone";
+ds_items_info[# name_index, items.bucket]	 = "Bucket";
+ds_items_info[# name_index, items.chair]	 = "Chair";
+ds_items_info[# name_index, items.picture]	 = "Picture";
+ds_items_info[# name_index, items.axe]		 = "Axe";
+ds_items_info[# name_index, items.potion]	 = "Potion";
+ds_items_info[# name_index, items.starfish]  = "Starfish";
+ds_items_info[# name_index, items.mushroom]  = "Mushroom";
+
+//----Item Descriptions
+ds_items_info[# description_index, items.none]		 = "Empty.";
+ds_items_info[# description_index, items.tomato]    = "To-mah... may-to.";
+ds_items_info[# description_index, items.potato]	 = "Pre-chips.";
+ds_items_info[# description_index, items.carrot]	 = "Keep away from rabbits.";
+ds_items_info[# description_index, items.artichoke] = "The heartiest vegetable";
+ds_items_info[# description_index, items.chilli]	 = "But oddly hot.";
+ds_items_info[# description_index, items.gourd]	 = "Or is it an eggplant?";
+ds_items_info[# description_index, items.corn]		 = "Better popped.";
+ds_items_info[# description_index, items.wood]		 = "Knock on it.";
+ds_items_info[# description_index, items.stone]	 = "There's nothing writtern in it.";
+ds_items_info[# description_index, items.bucket]	 = "You could fit a bucket-full of a watter in here!";
+ds_items_info[# description_index, items.chair]	 = "this chair is just right.";
+ds_items_info[# description_index, items.picture]	 = "Wait, who even is this?";
+ds_items_info[# description_index, items.axe]		 = "Chop chop!";
+ds_items_info[# description_index, items.potion]	 = "The liquid looks... oozy.";
+ds_items_info[# description_index, items.starfish]  = "So called because it looks like a star... but aren't real stars";
+ds_items_info[# description_index, items.mushroom]  = "A fungus; not mush room for interpretation.";
+
+
+#endregion
+
 for(var slot = 0; slot < inventory_slots; slot++){
 	ds_inventory[# 0, slot] = irandom_range(0,items.height -1);
 	ds_inventory[# 1, slot] = irandom_range(1,10);

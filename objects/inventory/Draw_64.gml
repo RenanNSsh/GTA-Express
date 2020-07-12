@@ -192,6 +192,17 @@ for(var slot = 0, inventory_row = 0, inventory_column = 0; slot < inventory_slot
 	inventory_row = slot div inventory_slots_width;
 }
 
+//Draw Item Description
+var info_grid = ds_items_info;
+var description = "";
+var inventory_selected_item = inventory_grid[# 0, selected_slot]
+if(inventory_selected_item > 0){
+	description = info_grid[# 0, inventory_selected_item] + ". " + info_grid[# 1, inventory_selected_item];
+	draw_set_font(fnt_text_12);
+	draw_text_ext_color(description_position_x,description_position_y,description,string_height("M"),(inventory_UI_width * scale) - (x_buffer_between_slots * 2),text_color,text_color,text_color,text_color,1);
+}
+
+
 if(pickup_slot != -1){
 	//Item
 	//The index 0 of inventory contains the index of the item, example: tomato = 1

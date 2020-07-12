@@ -31,6 +31,11 @@ y_buffer_between_slots = 4;
 inventory_slot_x = inventory_UI_x + (9 * scale);
 inventory_slot_y = inventory_UI_y + (40 * scale);
 
+selected_slot = 0;
+pickup_slot = -1;
+mouse_x_slot = 0;
+mouse_y_slot = 0;
+
 #region Player Info
 user_name_x =  inventory_slot_x;
 user_name_y =  inventory_UI_y + (10 * scale);

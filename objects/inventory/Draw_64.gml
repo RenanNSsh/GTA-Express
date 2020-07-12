@@ -102,23 +102,84 @@ for(var slot = 0, inventory_row = 0, inventory_column = 0; slot < inventory_slot
 		c_white,
 		1
 	);
-	if(inventory_item > 0){
+	
+	switch(slot){
+		case selected_slot:
+			if(inventory_item > 0){
 		
-		draw_sprite_part_ext(
-			sprite_inventory_items, 
-			0, 
-			sprite_x, 
-			sprite_y, 
-			cell_size, 
-			cell_size,
-			position_x_slot, 
-			position_y_slot, 
-			scale, 
-			scale,
-			c_white,
-			1
-		);
+				draw_sprite_part_ext(
+					sprite_inventory_items, 
+					0, 
+					sprite_x, 
+					sprite_y, 
+					cell_size, 
+					cell_size,
+					position_x_slot, 
+					position_y_slot, 
+					scale, 
+					scale,
+					c_white,
+					1
+				);
+				gpu_set_blendmode(bm_add);
+				draw_sprite_part_ext(
+					sprite_inventory_UI,
+					0,
+					0,
+					0,
+					cell_size,
+					cell_size,
+					position_x_slot, 
+					position_y_slot, 
+					scale,
+					scale,
+					c_white,
+					.3
+				);
+				gpu_set_blendmode(bm_normal);
+	
+			}
+			break;
+		case pickup_slot:
+			if(inventory_item > 0){
+		
+						draw_sprite_part_ext(
+							sprite_inventory_items, 
+							0, 
+							sprite_x, 
+							sprite_y, 
+							cell_size, 
+							cell_size,
+							position_x_slot, 
+							position_y_slot, 
+							scale, 
+							scale,
+							c_white,
+							0.2
+						);
+					}
+		break;
+		
+		default: 
+			if(inventory_item > 0){
+		
+				draw_sprite_part_ext(
+					sprite_inventory_items, 
+					0, 
+					sprite_x, 
+					sprite_y, 
+					cell_size, 
+					cell_size,
+					position_x_slot, 
+					position_y_slot, 
+					scale, 
+					scale,
+					c_white,
+					1
+				);
+			}
 	}
+		
 	//Draw Item Number
 	if(inventory_item > 0){
 		var item_amount = inventory_grid[# 1, slot];
@@ -130,4 +191,31 @@ for(var slot = 0, inventory_row = 0, inventory_column = 0; slot < inventory_slot
 	inventory_column = slot mod inventory_slots_width;
 	inventory_row = slot div inventory_slots_width;
 }
+
+if(pickup_slot != -1){
+	//Item
+	//The index 0 of inventory contains the index of the item, example: tomato = 1
+	inventory_item = inventory_grid[# 0, pickup_slot];
+	sprite_x = (inventory_item mod inventory_items_columns_sprite) * cell_size;
+	sprite_y = (inventory_item div inventory_items_columns_sprite) * cell_size;
+	draw_sprite_part_ext(
+		sprite_inventory_items, 
+		0, 
+		sprite_x, 
+		sprite_y, 
+		cell_size, 
+		cell_size,
+		mouse_x_gui, 
+		mouse_y_gui, 
+		scale, 
+		scale,
+		c_white,
+		1
+	);
+	
+	var item_amount = inventory_grid[# 1, pickup_slot];
+	draw_text_color(mouse_x_gui + (cell_size /2 * scale), mouse_y_gui, string(item_amount),text_color,text_color,text_color,text_color,1);
+
+}
+
 #endregion

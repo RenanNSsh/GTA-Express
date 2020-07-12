@@ -26,6 +26,14 @@ spr_torso = 0;
 spr_hair = 0;
 spr_shadow = 0;
 
+can_move = true;
+
 
 //Random movement
 alarm[1] = 1;
+
+portrait_index = 0;
+voice = snd_voice1;
+name = "Anonymous"
+text = ["This person has nothing to say."];
+speakers = [id];

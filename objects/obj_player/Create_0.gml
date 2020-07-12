@@ -22,4 +22,10 @@ spr_torso = spr_torso_male_shirt_white;
 spr_hair = spr_hair_male_messy_raven;
 spr_shadow = spr_character_shadow;
 
+active_textbox = noone;
+
 facing = 0;
+collision_radius = 16;
+portrait_index = 7;
+voice = snd_voice1;
+name = inventory.ds_player_info[# 1, 3];

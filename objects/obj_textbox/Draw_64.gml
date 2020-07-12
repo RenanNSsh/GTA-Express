@@ -10,7 +10,7 @@ draw_sprite(portrait_frame, 0, portrait_x,portrait_y);
 
 
 //Draw Portrait 
-draw_sprite(portrait, 0, portrait_x,portrait_y);
+draw_sprite(portrait, portrait_index, portrait_x,portrait_y);
 
 
 //Draw Portrait Frame

@@ -9,6 +9,8 @@ var input_up = keyboard_check(ord("W")) || keyboard_check(vk_up);
 var input_down = keyboard_check(ord("S")) || keyboard_check(vk_down);
 var input_run = keyboard_check(vk_shift);
 var input_walk = keyboard_check(vk_control);
+var input_interact = keyboard_check_pressed(ord("F"));
+
 
 //---------------CHANGE SPEED
 
@@ -104,6 +106,27 @@ if(transition_instance != noone && facing == transition_instance.player_facing_b
 	}
 	
 }
+
+//Textbox
+if(input_interact){
+	if(active_textbox == noone){
+		var npc_instance = collision_rectangle(x-collision_radius, y-collision_radius,x+collision_radius,y+collision_radius,par_NPC,false, false);
+		if(npc_instance != noone){
+			with(npc_instance){
+				var text_box = create_textbox(text,speakers);
+				can_move = false;
+				next_move_x = 0;
+				next_move_y = 0;
+			}
+			active_textbox = text_box;
+		}
+	}else{
+		if(!instance_exists(active_textbox)){
+			active_textbox = noone;
+		}
+	}
+}
+
 
 //---------------APPLY MOVEMENT
 x += next_move_x;

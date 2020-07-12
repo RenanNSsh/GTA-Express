@@ -113,7 +113,7 @@ if(input_interact){
 		var npc_instance = collision_rectangle(x-collision_radius, y-collision_radius,x+collision_radius,y+collision_radius,par_NPC,false, false);
 		if(npc_instance != noone){
 			with(npc_instance){
-				var text_box = create_textbox(text,speakers);
+				var text_box = create_textbox(text,speakers,next_line);
 				can_move = false;
 				next_move_x = 0;
 				next_move_y = 0;

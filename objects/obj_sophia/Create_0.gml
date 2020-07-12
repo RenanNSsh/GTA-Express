@@ -13,8 +13,10 @@ portrait_index = 4;
 voice = snd_voice2;
 name = "Sophia"
 text = [
-		"It's a beautiful day outside. Birds are blooming, flowers are singing",
-		"In days like these... Kids like you...",
-		"Should be playing GUITAR HERO :)",
-		"LMAO"];
-speakers = [id,id,id,obj_player];
+		"Hey, what's your name?",
+		["I'm the Player. i'm kind of a big deal", "I'm a Voltorb"],
+		"Right...",
+		"Don't explode pls.",
+		];
+speakers = [id,obj_player,id,id];
+next_line = [0,[2,3],-1,-1]

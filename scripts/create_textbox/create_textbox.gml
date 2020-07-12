@@ -1,12 +1,14 @@
 ///@description create_textbox
 ///@arg text
 ///@arg speakers
+///@arg next_line
 
 var textbox = instance_create_layer(0,0,"Text",obj_textbox);
 
 with(textbox){
 	text = argument[0];
 	speakers = argument[1];
+	next_line = argument[2];
 	
 	var amount_speaker = array_length_1d(speakers);
 	for(var speaker_index = 0; speaker_index < amount_speaker; speaker_index++){

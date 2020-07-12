@@ -43,3 +43,6 @@ interact_key = vk_space;
 text_color = c_black;
 name_text_color = c_black;
 font = fnt_text_12;
+
+choice = 0;
+choice_color = c_white;

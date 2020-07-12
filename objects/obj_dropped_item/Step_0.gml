@@ -49,6 +49,41 @@ if(drop_move){
 				}
 			}
 			if(picked_up){
+				#region Create Notification
+				if(!instance_exists(obj_notification)){
+					instance_create_layer(0,0,"Instances",obj_notification);
+				}
+						var index_dropped_item = item_index;
+				with(obj_notification){
+					if(!ds_exists(ds_notifications,ds_type_grid)){
+						ds_notifications = ds_grid_create(2,1);
+						var notifications_grid = ds_notifications;
+						notifications_grid[# 0, 0] = 1;
+						notifications_grid[# 1, 0] = inventory.ds_items_info[# 0, index_dropped_item];
+					}else{ //Add to Grid
+						event_perform(ev_other,ev_user0);
+						
+						var notifications_grid = ds_notifications;
+						var notifications_amount = ds_grid_height(notifications_grid);
+						var item_name = inventory.ds_items_info[# 0, index_dropped_item];
+						var in_grid = false;
+						
+						for(var notification_index = 0; notification_index < notifications_amount; notification_index++){
+							if(item_name == notifications_grid[# 1, notification_index]){ //Notification already on the grid?
+								notifications_grid[# 0, notification_index]++;
+								in_grid = true;
+								break;
+							}
+						}
+						
+						if(!in_grid){
+							ds_grid_resize(notifications_grid,2,notifications_amount+1);
+							notifications_grid[# 0, notifications_amount] = 1;
+							notifications_grid[# 1, notifications_amount] = inventory.ds_items_info[# 0, index_dropped_item];
+						}
+					}
+				}
+				#endregion
 				instance_destroy();
 				show_debug_message("Picked up an item.");
 			}else{

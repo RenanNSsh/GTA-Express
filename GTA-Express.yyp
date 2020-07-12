@@ -823,6 +823,14 @@
             }
         },
         {
+            "Key": "eff40bc6-42ce-44bd-99cb-5f1721d27a52",
+            "Value": {
+                "id": "62d2bac3-2a79-447b-b95d-3940a539395f",
+                "resourcePath": "objects\\obj_notification\\obj_notification.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "b0895d2c-bd2a-4f02-b3c2-786a97d444cc",

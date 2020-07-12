@@ -1,5 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+/// @description Insert description here
+// You can write your code in this editor
+
+current_room_width  = room_width;
+current_room_height  = room_height;
+
+
 if(!spawn_room) exit;
 obj_player.x = spawn_x;
 obj_player.y = spawn_y;

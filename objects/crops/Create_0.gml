@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 ds_crops_types = 0;
+ds_crops_instances = 0;
 
 enum crop{
 	tomato,
@@ -24,3 +25,5 @@ planting = false;
 select_crop = 0;
 mouse_crop_x = 0;
 mouse_crop_y = 0;
+
+cell_size = 32;

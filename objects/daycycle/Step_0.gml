@@ -57,7 +57,6 @@ if(draw_daylight){
 			var color_dark_2 = darks[ceil(current_dark_color)];
 		
 			darkness = merge_number(color_dark_1, color_dark_2, current_dark_color - floor(current_dark_color));
-			show_debug_message(darkness);
 		}
 	#endregion
 }

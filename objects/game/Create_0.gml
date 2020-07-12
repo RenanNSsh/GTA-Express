@@ -6,8 +6,6 @@ room_goto_next();
 debug = false;
 
 //GUI Properties
-gui_width = display_get_gui_width();
-gui_height = display_get_gui_height();
 black_alpha = 0;
 
 //Transition Properties
@@ -23,3 +21,8 @@ enum dir{
 	left = 180,
 	down = 270
 }
+
+global.game_width = 750;
+global.game_height = 420;
+
+display_set_gui_size(global.game_width, global.game_height);

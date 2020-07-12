@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -1;
-scale = 2;
-show_inventory = true;
+scale = 1;
+show_inventory = false;
 
 inventory_slots = 20;
 inventory_slots_width = 8;

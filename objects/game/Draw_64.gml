@@ -16,7 +16,7 @@ if(do_transition){
 	
 	//Draw Black Fade
 	draw_set_alpha(black_alpha);
-	draw_rectangle_colour(0,0, gui_width, gui_height,c_black,c_black,c_black,c_black, false);
+	draw_rectangle_colour(0,0, global.game_width, global.game_height,c_black,c_black,c_black,c_black, false);
 	draw_set_alpha(1);
 	
 }

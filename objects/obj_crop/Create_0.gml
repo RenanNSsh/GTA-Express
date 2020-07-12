@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+collideable = false;
 
 frame_width = 32;
 frame_height = 64;

@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "4f57bc1f-7047-4684-afc7-ecf8c562a1e3",
+            "Value": {
+                "id": "7aa4fcf9-3aa6-465e-8b7d-71258373b957",
+                "resourcePath": "objects\\depthsorter\\depthsorter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4fea149e-2ccc-4790-ba23-f8369ee29380",
             "Value": {
                 "id": "021a7a20-e1eb-473d-8b4b-9d34d126755e",
@@ -386,7 +394,7 @@
             "Key": "6d47f019-c91d-4d45-a9e4-e2f1455c8c56",
             "Value": {
                 "id": "0aada35b-d22f-4ec9-8041-afc1b1354991",
-                "resourcePath": "objects\\obj_parent_NPC\\obj_parent_NPC.yy",
+                "resourcePath": "objects\\par_NPC\\par_NPC.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -428,6 +436,14 @@
                 "id": "4745588f-571d-4bf0-917b-6a7bdefb4f28",
                 "resourcePath": "sprites\\spr_torso_male_top_brown\\spr_torso_male_top_brown.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8665a5e3-57da-4efc-b5b2-0bde9ae416cb",
+            "Value": {
+                "id": "1d3f497d-288e-45b8-a5dd-709eabe89d88",
+                "resourcePath": "objects\\par_depthobject\\par_depthobject.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -724,6 +740,14 @@
                 "id": "b0895d2c-bd2a-4f02-b3c2-786a97d444cc",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f471a5d9-50d0-44c9-8b17-8c4e0c78a5c1",
+            "Value": {
+                "id": "b5eb39ce-b5c8-4de6-8566-40f851304674",
+                "resourcePath": "views\\f471a5d9-50d0-44c9-8b17-8c4e0c78a5c1.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

@@ -62,8 +62,8 @@ if(next_move_x != 0){
 
 //---------------COLLISION CHECKS
 //HORIZONTAL
-var horizontal_colission = place_meeting(x+next_move_x, y, obj_collision);
-if(horizontal_colission){
+var horizontal_collision_object = instance_place(x+next_move_x, y, obj_collision);
+if(horizontal_collision_object != noone && horizontal_collision_object.collideable){
 	repeat(abs(next_move_x)){
 		var horizontal_colission_pixel = place_meeting( x + sign(next_move_x), y, obj_collision);
 		if(!horizontal_colission_pixel){
@@ -77,8 +77,8 @@ if(horizontal_colission){
 
 
 //VERTICAL
-var vertical_colission = place_meeting(x, y+next_move_y, obj_collision);
-if(vertical_colission){
+var vertical_collision_object = instance_place(x, y+next_move_y, obj_collision);
+if(vertical_collision_object != noone && vertical_collision_object.collideable){
 	repeat(abs(next_move_y)){
 		var vertical_colission_pixel = place_meeting( x , y + sign(next_move_y), obj_collision);
 		if(!vertical_colission_pixel){

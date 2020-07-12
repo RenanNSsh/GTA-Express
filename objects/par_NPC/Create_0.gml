@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+collideable = true;
 
 walk_speed = 1;
 normal_speed = 2;

@@ -7,14 +7,17 @@ if(room != rm_farm_field){
 
 
 #region Planting
-var input_planting_mode = keyboard_check_pressed(ord("P"));
 var input_plant_crop    = mouse_check_button_pressed(mb_left);
 var input_next_crop     = mouse_wheel_up(); 
 var input_previous_crop = mouse_wheel_down();
 
-if(input_planting_mode){
-	planting = !planting;
+var inventory_item_type = item_type.nothing;
+if(inventory.selected_slot != -1){
+	var inventory_selected_item = inventory.ds_inventory[# inventory_grid.item, inventory.selected_slot];
+	inventory_item_type = inventory.ds_items_info[# inventory_item_info.type_index, inventory_selected_item];	
 }
+planting = inventory_item_type == item_type.crop;
+
 
 
 

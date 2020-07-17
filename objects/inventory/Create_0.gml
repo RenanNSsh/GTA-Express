@@ -1,7 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -1;
-scale = 1;
+
+selected_slot = -1;
+selected_slot_color = make_color_rgb(163,82,32);
+
+scale = 2;
 show_inventory = false;
 
 inventory_slots = 20;
@@ -13,12 +17,21 @@ gui_height = display_get_gui_height();
 
 
 cell_size = 32;
-inventory_UI_width = 288;
-inventory_UI_height = 192;
-sprite_inventory_UI = spr_inventory_UI;
+inventory_UI_opened_width = 288;
+inventory_UI_opened_height = 192;
+sprite_inventory_UI_opened = spr_inventory_UI_opened;
 
-inventory_UI_x = (gui_width / 2) - (inventory_UI_width / 2 * scale);
-inventory_UI_y = (gui_height / 2) - (inventory_UI_height / 2 * scale);
+sprite_inventory_UI = spr_inventory_UI;
+inventory_UI_width = sprite_get_width(sprite_inventory_UI);
+inventory_UI_height = sprite_get_height(sprite_inventory_UI);
+inventory_UI_scale = 1.5;
+inventory_UI_x =  (gui_width / 2) - (inventory_UI_width / 2 * inventory_UI_scale);
+inventory_UI_y = gui_height - (inventory_UI_height * inventory_UI_scale);
+inventory_quick_slot_x = inventory_UI_x + (9 * inventory_UI_scale);
+inventory_quick_slot_y = inventory_UI_y + (7 * inventory_UI_scale);
+
+inventory_UI_opened_x = (gui_width / 2) - (inventory_UI_opened_width / 2 * scale);
+inventory_UI_opened_y = (gui_height / 2) - (inventory_UI_opened_height / 2 * scale);
 
 
 sprite_inventory_items = spr_inventory_items;
@@ -28,17 +41,17 @@ inventory_items_rows_sprite = sprite_get_height(sprite_inventory_items) / cell_s
 x_buffer_between_slots = 2;
 y_buffer_between_slots = 4;
 
-inventory_slot_x = inventory_UI_x + (9 * scale);
-inventory_slot_y = inventory_UI_y + (40 * scale);
+inventory_slot_x = inventory_UI_opened_x + (9 * scale);
+inventory_slot_y = inventory_UI_opened_y + (40 * scale);
 
-selected_slot = 0;
+hover_slot = 0;
 pickup_slot = -1;
 mouse_x_slot = 0;
 mouse_y_slot = 0;
 
 #region Player Info
 user_name_x =  inventory_slot_x;
-user_name_y =  inventory_UI_y + (10 * scale);
+user_name_y =  inventory_UI_opened_y + (10 * scale);
 
 user_gold_x = user_name_x + (178 * scale);
 user_gold_y = user_name_y + (3 * scale);
@@ -73,8 +86,14 @@ player_info[# 1, 3] = "Mafia";
 //---------Inventory
 //0 = ITEM
 //1 = NUMBER
+enum inventory_grid{
+	item,
+	amount,
+	height
+}
 
-ds_inventory = ds_grid_create(2, inventory_slots);
+
+ds_inventory = ds_grid_create(inventory_grid.height	, inventory_slots);
 
 enum items{
  none			= 0,
@@ -98,14 +117,31 @@ enum items{
 }
 
 #region Create Items Info Grid
-description_position_x = user_name_x;
-description_position_y = inventory_UI_y + (156 * scale);
 
-ds_items_info = ds_grid_create(2,items.height);
+//items types
+enum item_type{
+	crop,
+	weapon,
+	other_item,
+	nothing
+}
+
+enum inventory_item_info{
+	name_index,
+	description_index,
+	type_index
+}
+
+description_position_x = user_name_x;
+description_position_y = inventory_UI_opened_y + (156 * scale);
+
+ds_items_info = ds_grid_create(3,items.height);
 
 //---Item Names
-var name_index = 0;
-var description_index = 1;
+var name_index = inventory_item_info.name_index;
+var description_index = inventory_item_info.description_index;
+var type_index = inventory_item_info.type_index;
+
 ds_items_info[# name_index, items.none]		 = "Nothing";
 ds_items_info[# name_index, items.tomato]    = "Tomato";
 ds_items_info[# name_index, items.potato]	 = "Potato";
@@ -143,6 +179,24 @@ ds_items_info[# description_index, items.potion]	 = "The liquid looks... oozy.";
 ds_items_info[# description_index, items.starfish]  = "So called because it looks like a star... but aren't real stars";
 ds_items_info[# description_index, items.mushroom]  = "A fungus; not mush room for interpretation.";
 
+//------item types
+ds_items_info[# type_index, items.none]		 = item_type.nothing;
+ds_items_info[# type_index, items.tomato]    = item_type.crop;
+ds_items_info[# type_index, items.potato]	 = item_type.crop;
+ds_items_info[# type_index, items.carrot]	 = item_type.crop;
+ds_items_info[# type_index, items.artichoke] = item_type.crop;
+ds_items_info[# type_index, items.chilli]	 = item_type.crop; 
+ds_items_info[# type_index, items.gourd]	 = item_type.crop;
+ds_items_info[# type_index, items.corn]		 = item_type.crop;
+ds_items_info[# type_index, items.wood]		 = item_type.other_item;
+ds_items_info[# type_index, items.stone]	 = item_type.other_item;
+ds_items_info[# type_index, items.bucket]	 = item_type.other_item;
+ds_items_info[# type_index, items.chair]	 = item_type.other_item;
+ds_items_info[# type_index, items.picture]	 = item_type.other_item;
+ds_items_info[# type_index, items.axe]		 = item_type.weapon;
+ds_items_info[# type_index, items.potion]	 = item_type.other_item;
+ds_items_info[# type_index, items.starfish]  = item_type.other_item;
+ds_items_info[# type_index, items.mushroom]  = item_type.other_item;
 
 #endregion
 

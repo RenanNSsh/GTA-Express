@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(room != rm_farm_field || inventory.show_inventory){ 
+if(room != rm_farm_field || inventory.show_inventory || inventory.pickup_slot != -1){ 
 	planting = false;
 	exit;
 }

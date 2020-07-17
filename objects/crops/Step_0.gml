@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(room != rm_farm_field){ 
+if(room != rm_farm_field || inventory.show_inventory){ 
 	planting = false;
 	exit;
 }
@@ -8,41 +8,30 @@ if(room != rm_farm_field){
 
 #region Planting
 var input_plant_crop    = mouse_check_button_pressed(mb_left);
-var input_next_crop     = mouse_wheel_up(); 
-var input_previous_crop = mouse_wheel_down();
 
 var inventory_item_type = item_type.nothing;
+var inventory_selected_item = -1;
+var inventory_selected_slot =  inventory.selected_slot;
 if(inventory.selected_slot != -1){
-	var inventory_selected_item = inventory.ds_inventory[# inventory_grid.item, inventory.selected_slot];
+	inventory_selected_item = inventory.ds_inventory[# inventory_grid.item,inventory_selected_slot];
 	inventory_item_type = inventory.ds_items_info[# inventory_item_info.type_index, inventory_selected_item];	
 }
 planting = inventory_item_type == item_type.crop;
 
 
-
-
-if(planting){	
+if(planting && inventory_selected_item != -1){	
 	mouse_crop_x = mouse_x;
 	mouse_crop_y = mouse_y;
-	
-	if(input_next_crop){
-		select_crop++;
-	}
-	
-	if(input_previous_crop){
-		select_crop--;
-	}
-	
-	var last_crop_index = sprite_get_number(spr_crops_picked) - 1;
-	
-	if(select_crop > last_crop_index){
-		select_crop = 0;
-	}else if(select_crop < 0){
-		select_crop = last_crop_index;
-	}
-	
-	if(input_plant_crop){
-		instance_create_crop(mouse_crop_x, mouse_crop_y, select_crop);
+	var crop_index = ds_grid_value_y(ds_crops_types,3,0,3,ds_grid_height(ds_crops_types)-1,inventory_selected_item)
+	if(crop_index != -1){
+		select_crop = crop_index;
+		
+		if(input_plant_crop){
+			var crop_instance = instance_create_crop(mouse_crop_x, mouse_crop_y, select_crop);
+			if(crop_instance != false){
+				inventory.ds_inventory[# inventory_grid.amount,  inventory_selected_slot]--;
+			}
+		}
 	}
 }
 #endregion

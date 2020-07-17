@@ -4,6 +4,7 @@ if(room == rm_farm_field){
 	if(instance_exists(obj_crop) ){
 		with(obj_crop){
 			
+			days_old++;
 			if(growth_stage_duration != 0){
 				growth_stage = days_old div growth_stage_duration;
 			}

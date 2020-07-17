@@ -28,4 +28,6 @@ var cell_index_y = grid_cell_index_y * game_cell_size;
 draw_rectangle_color(cell_index_x, cell_index_y, cell_index_x + game_cell_size, cell_index_y + game_cell_size, can_plant_color, can_plant_color,can_plant_color,can_plant_color, true);
 
 //Draw the crop to be planted
-draw_sprite(spr_crops_picked,select_crop, cell_index_x + (game_cell_size/2), cell_index_y + (game_cell_size/2));
+if(select_crop != -1){
+	draw_sprite(spr_crops_picked,select_crop, cell_index_x + (game_cell_size/2), cell_index_y + (game_cell_size/2));
+}

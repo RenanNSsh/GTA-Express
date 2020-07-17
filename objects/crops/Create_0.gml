@@ -15,16 +15,16 @@ enum crop{
 	corn
 }
 
-create_crop_type(4,40,"tomato"); //tomato
-create_crop_type(3,35,"potato"); //potato
-create_crop_type(2,25,"carrot"); //carrot
-create_crop_type(4,45,"artichoke"); //artichoke
-create_crop_type(3,30,"chilli"); //chilli
-create_crop_type(2,20,"gourd"); //gourd
-create_crop_type(5,50,"corn"); //corn
+create_crop_type(4,40,"tomato",items.tomato); //tomato
+create_crop_type(3,35,"potato",items.potato); //potato
+create_crop_type(2,25,"carrot",items.carrot); //carrot
+create_crop_type(4,45,"artichoke",items.artichoke); //artichoke
+create_crop_type(3,30,"chilli",items.chilli); //chilli
+create_crop_type(2,20,"gourd",items.gourd); //gourd
+create_crop_type(5,50,"corn",items.corn); //corn
 
 planting = false;
-select_crop = 0;
+select_crop = -1;
 mouse_crop_x = 0;
 mouse_crop_y = 0;
 

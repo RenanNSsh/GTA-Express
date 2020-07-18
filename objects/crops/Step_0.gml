@@ -16,7 +16,7 @@ if(inventory.selected_slot != -1){
 	inventory_selected_item = inventory.ds_inventory[# inventory_grid.item,inventory_selected_slot];
 	inventory_item_type = inventory.ds_items_info[# inventory_item_info.type_index, inventory_selected_item];	
 }
-planting = inventory_item_type == item_type.crop;
+planting = inventory_item_type == item_type.crop || inventory_item_type ==  item_type.weapon;
 
 
 if(planting && inventory_selected_item != -1){	

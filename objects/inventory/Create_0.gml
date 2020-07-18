@@ -113,7 +113,10 @@ enum items{
  potion			= 14,
  starfish		= 15,
  mushroom		= 16,
- height			= 17
+ pistol			= 17,
+ rifle			= 18,
+ pistol2		= 19,
+ height			= 19
 }
 
 #region Create Items Info Grid
@@ -158,6 +161,9 @@ ds_items_info[# name_index, items.picture]	 = "Picture";
 ds_items_info[# name_index, items.axe]		 = "Axe";
 ds_items_info[# name_index, items.potion]	 = "Potion";
 ds_items_info[# name_index, items.starfish]  = "Starfish";
+ds_items_info[# name_index, items.pistol]  = "Automatic Pistol";
+ds_items_info[# name_index, items.rifle]  = "Rifle";
+ds_items_info[# name_index, items.pistol2]  = "Pistol";
 ds_items_info[# name_index, items.mushroom]  = "Mushroom";
 
 //----Item Descriptions
@@ -178,6 +184,9 @@ ds_items_info[# description_index, items.axe]		 = "Chop chop!";
 ds_items_info[# description_index, items.potion]	 = "The liquid looks... oozy.";
 ds_items_info[# description_index, items.starfish]  = "So called because it looks like a star... but aren't real stars";
 ds_items_info[# description_index, items.mushroom]  = "A fungus; not mush room for interpretation.";
+ds_items_info[# description_index, items.pistol]  = "Fast Pistol";
+ds_items_info[# description_index, items.rifle]  = "Fast Rifle";
+ds_items_info[# description_index, items.pistol2]  = "Slow Pistol";
 
 //------item types
 ds_items_info[# type_index, items.none]		 = item_type.nothing;
@@ -193,10 +202,14 @@ ds_items_info[# type_index, items.stone]	 = item_type.other_item;
 ds_items_info[# type_index, items.bucket]	 = item_type.other_item;
 ds_items_info[# type_index, items.chair]	 = item_type.other_item;
 ds_items_info[# type_index, items.picture]	 = item_type.other_item;
-ds_items_info[# type_index, items.axe]		 = item_type.weapon;
+ds_items_info[# type_index, items.axe]		 = item_type.other_item;
 ds_items_info[# type_index, items.potion]	 = item_type.other_item;
 ds_items_info[# type_index, items.starfish]  = item_type.other_item;
 ds_items_info[# type_index, items.mushroom]  = item_type.other_item;
+ds_items_info[# type_index, items.pistol]  = item_type.weapon;
+ds_items_info[# type_index, items.rifle]  = item_type.weapon;
+ds_items_info[# type_index, items.pistol2]  = item_type.weapon;
+
 
 #endregion
 

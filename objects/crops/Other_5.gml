@@ -14,11 +14,12 @@ if(room == rm_farm_field){
 		for(var row = 0; row < grid_width; row++){
 			for(var column = 0; column < grid_height; column++){
 				var crop_instance = ds_crops_instances[# row, column];
-				if(crop_instance){
+				if(crop_instance != -1){
 					ds_crops_data[# 0, slot] = row;
 					ds_crops_data[# 1, slot] = column;
 					ds_crops_data[# 2, slot] = crop_instance.crop_type;
 					ds_crops_data[# 3, slot] = crop_instance.days_old;
+					ds_crops_data[# 4, slot] = crop_instance.item_index;
 					
 					slot++;
 				}

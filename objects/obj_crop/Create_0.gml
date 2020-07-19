@@ -5,6 +5,10 @@ collideable = false;
 frame_width = 32;
 frame_height = 64;
 
+x_position = -1;
+y_position = -1;
+
+item_index = -1;
 crop_type = 0;
 days_old = 0;
 growth_stage = 0;

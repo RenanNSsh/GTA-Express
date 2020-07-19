@@ -1,7 +1,7 @@
 ///@description respawn_crop
 ///@arg grid_x
 ///@arg grid_y
-///@arg grid_type
+///@arg crop_type
 ///@arg days_old
 
 var cell_size = crops.cell_size;
@@ -19,7 +19,10 @@ show_debug_message("Respawned a " + crops.ds_crops_types[# 2, argument2])
 with(crop_instance){
 	crop_type = argument2;
 	days_old = argument3;
+	item_index = argument4;
 	growth_stage_duration = crops.ds_crops_types[# 0, crop_type];
+	x_position = argument0;
+	y_position = argument1;
 }
 
 return crop_instance;

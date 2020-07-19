@@ -2,7 +2,7 @@
 // You can write your code in this editor
 ds_crops_types = -1;
 ds_crops_instances = -1;
-ds_crops_data = ds_grid_create(4,1);
+ds_crops_data = ds_grid_create(5,1);
 ds_grid_clear(ds_crops_data,-1);
 
 enum crop{

@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
 if(room != rm_farm_field || inventory.show_inventory || inventory.pickup_slot != -1){ 
 	planting = false;
 	exit;
@@ -27,7 +29,7 @@ if(planting && inventory_selected_item != -1){
 		select_crop = crop_index;
 		
 		if(input_plant_crop){
-			var crop_instance = instance_create_crop(mouse_crop_x, mouse_crop_y, select_crop);
+			var crop_instance = instance_create_crop(mouse_crop_x, mouse_crop_y, select_crop,inventory_selected_item);
 			if(crop_instance != false){
 				inventory.ds_inventory[# inventory_grid.amount,  inventory_selected_slot]--;
 			}

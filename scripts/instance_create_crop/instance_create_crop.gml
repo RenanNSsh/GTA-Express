@@ -29,12 +29,17 @@ if(!crop_in_cell){
 
 	//Create the Instance
 	var crop_instance = instance_create_layer(cell_index_x + (cell_size/2), cell_index_y  + (cell_size/2), "Instances",obj_crop);
+	show_debug_message("spawning at:"+string(grid_cell_index_x)+", "+string(grid_cell_index_y));
+	
 	crops_instances_grid[# grid_cell_index_x, grid_cell_index_y] = crop_instance;
 
 	//Give the crop its characteristics
 	with (crop_instance){
 		crop_type = argument2;
+		item_index = argument3;
 		growth_stage_duration = crops.ds_crops_types[# 0, crop_type];
+		x_position = grid_cell_index_x;
+		y_position = grid_cell_index_y;
 	}
 
 	return crop_instance;	

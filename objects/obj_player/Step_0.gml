@@ -10,7 +10,7 @@ var input_down = keyboard_check(ord("S")) || keyboard_check(vk_down);
 var input_run = keyboard_check(vk_shift);
 var input_walk = keyboard_check(vk_control);
 var input_interact = keyboard_check_pressed(ord("F"));
-
+var input_get_crop = keyboard_check_pressed(ord("E"));
 
 //---------------CHANGE SPEED
 
@@ -126,6 +126,13 @@ if(input_interact){
 		}
 	}
 }
+
+
+//Textbox
+if(input_get_crop && instance_exists(obj_crop)){
+	player_pick_crop();
+}
+
 
 
 //---------------APPLY MOVEMENT

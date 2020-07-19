@@ -3,7 +3,7 @@
 
 if(room == rm_farm_field){
 	ds_crops_instances = ds_grid_create(room_width div cell_size, room_height div cell_size);
-	ds_grid_clear(ds_crops_instances,0);
+	ds_grid_clear(ds_crops_instances,-1);
 	
 	//Respawn the crops
 	if(ds_crops_data[# 0, 0] != -1){
@@ -14,6 +14,7 @@ if(room == rm_farm_field){
 				ds_crops_data[# 1, slot],
 				ds_crops_data[# 2, slot],
 				ds_crops_data[# 3, slot],
+				ds_crops_data[# 4, slot],
 			);
 		}
 		with(obj_crop){
